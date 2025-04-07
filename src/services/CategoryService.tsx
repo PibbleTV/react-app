@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import TokenService from "./TokenService";
 
-const hostname = "http://localhost:8078/category-service";
+const hostname = "http://localhost:8078/api-category";
 
 interface Category {
   id: number;
@@ -11,7 +11,7 @@ interface Category {
 
 function getAllCategories(): Promise<Category[]> {
   return axios
-    .get<Category[]>(`${hostname}/category/getAll`)
+    .get<Category[]>(`${hostname}/getAll`)
     .then((response: AxiosResponse<Category[]>) => response.data);
 }
 
