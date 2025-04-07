@@ -8,6 +8,6 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <KeycloakProvider>
       <App />
-            </KeycloakProvider>
-          </StrictMode>
+    </KeycloakProvider>
+  </StrictMode>
 );
