@@ -4,7 +4,7 @@ FROM ossrs/srs:5
 COPY srs.conf /usr/local/srs/conf/srs.conf 
 
 # Expose ports (optional, but good practice)
-EXPOSE 10080/udp 10080/tcp 7000
+EXPOSE 10080/udp
 
 # Run SRS with the custom config
 CMD ["/usr/local/srs/objs/srs", "-c", "/usr/local/srs/conf/srs.conf"]

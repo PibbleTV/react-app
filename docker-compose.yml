@@ -4,10 +4,8 @@ services:
     container_name: SRS
     ports:
       - "10080:10080/udp"
-      - "10080:10080/tcp"
-      - "7000:7000"
     volumes:
-      - hls-data:/usr/local/srs/objs/nginx/html/hls
+      - hls-data:/usr/local/srs/objs/nginx/html/hls/live/
 
   nginx:
     image: nginx:alpine
@@ -16,7 +14,7 @@ services:
       - "7500:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - hls-data:/usr/local/srs/objs/nginx/html/hls:ro
+      - hls-data:/usr/local/srs/objs/nginx/html/hls/live/:ro
 
 volumes:
   hls-data:
