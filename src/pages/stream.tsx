@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef} from 'react';
 import Hls from 'hls.js';
 
 const Stream: React.FC = () => {
@@ -13,7 +13,6 @@ const Stream: React.FC = () => {
           hls.loadSource('http://localhost:7500/hls/live/gamingstream.m3u8');
           hls.attachMedia(videoRef.current);
 
-
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
             if (videoRef.current) {
               videoRef.current.play();
@@ -21,10 +20,9 @@ const Stream: React.FC = () => {
           });
 
           hls.on(Hls.Events.ERROR, (event, data) => {
-            console.error('HLS.js error:', data);
+            console.error('HLS.js error:', event + " Data:" + data);
           });
         } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-
           videoRef.current.src = 'http://localhost:7500/hls/live/gamingstream.m3u8';
           videoRef.current.play();
         }
@@ -49,6 +47,24 @@ const Stream: React.FC = () => {
         autoPlay
         muted
       />
+
+     <style>
+        {`
+        video::-webkit-media-controls-current-time-display,
+        video::-webkit-media-controls-time-remaining-display,
+        video::-webkit-media-controls-duration-display {
+          display: none !important;
+        }
+        
+        video::-webkit-media-controls-timeline {
+          display: none !important;
+        }
+        
+        video {
+          --media-controls-time-display: none;
+        }
+        `}
+      </style>
     </div>
   );
 };
