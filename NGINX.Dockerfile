@@ -7,3 +7,6 @@ EXPOSE 80
 
 # Run NGINX with the custom config
 CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
+
+
+# docker build -t ghcr.io/pibbletv/pibbletv-nginx:latest -f NGINX.Dockerfile .
