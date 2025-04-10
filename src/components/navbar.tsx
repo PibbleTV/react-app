@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   const keycloakContext = useContext(KeycloakContext);
 
   if (!keycloakContext) {
-    return <div>Error: Keycloak context not found</div>;
+    return <div>Error: Keycloak context could not be found</div>;
   }
 
   const { authenticated, keycloak } = keycloakContext;
