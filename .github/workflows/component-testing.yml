@@ -24,5 +24,16 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Build Docker image
-        run: docker build --target test -t ghcr.io/pibbletv/pibbletv-frontend:test .
+      - name: Build Nginx and SRS image
+        run: |
+          docker build -f NGINX.Dockerfile -t ghcr.io/pibbletv/pibbletv-nginx:latest  .
+          docker build -f SRS.Dockerfile -t ghcr.io/pibbletv/pibbletv-srs:latest .
+
+      - name: Build Docker images using docker-compose (SRS and NGINX)
+        run: |
+          docker-compose -f docker-compose.yml build
+
+      - name: Test Docker images
+        run: |
+          docker-compose -f docker-compose.yml up -d
+          docker-compose -f docker-compose.yml down

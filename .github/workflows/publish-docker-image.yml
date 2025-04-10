@@ -15,26 +15,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Log in to the Container Registry (CR)
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GH_TOKEN }}
+      # - name: Log in to the Container Registry (CR)
+      #   uses: docker/login-action@v2
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GH_TOKEN }}
 
-      - name: Build Docker image
-        run: |
-          docker build \
-            --target test \
-            -t ghcr.io/pibbletv/pibbletv-frontend \
-            --label "org.opencontainers.image.source=https://github.com/pibbletv/pibbletv-frontend" \
-            .
+      # - name: Build Docker image
+      #   run: |
+      #     docker build \
+      #       --target test \
+      #       -t ghcr.io/pibbletv/pibbletv-frontend \
+      #       --label "org.opencontainers.image.source=https://github.com/pibbletv/pibbletv-frontend" \
+      #       .
 
-      - name: Publish to CR
-        run: docker push ghcr.io/pibbletv/pibbletv-frontend
+      # - name: Publish to CR
+      #   run: docker push ghcr.io/pibbletv/pibbletv-frontend
 
-      - name: Test pull from registry
-        run: docker pull ghcr.io/pibbletv/pibbletv-frontend
+      # - name: Test pull from registry
+      #   run: docker pull ghcr.io/pibbletv/pibbletv-frontend
 
       - name: Initialize release pipeline
         run: gh workflow run "deploy-to-test-server.yml" --json

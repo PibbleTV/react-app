@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Homepage from "../src/pages/Homepage";
+import Homepage from "../src/pages/homepage";
 import "@testing-library/jest-dom";
 
 describe("Homepage Component", () => {
