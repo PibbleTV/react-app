@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: Run tests
-        run: npm test
+        run: npx jest
