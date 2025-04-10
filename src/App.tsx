@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useContext, useEffect } from "react";
 import Navbar from "./components/navbar.tsx";
-import { KeycloakContext } from "./KeycloakProvider.tsx";
 import Homepage from "./pages/homepage.tsx";
 import Categories from "./pages/categories.tsx";
 import Login from "./pages/login.tsx";

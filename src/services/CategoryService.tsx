@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-import TokenService from "./TokenService";
 
 const hostname = "http://localhost:8078/api-category";
 

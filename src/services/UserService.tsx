@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import TokenService from "./TokenService";
 import { IUser } from "../types/user.type";
 
@@ -14,8 +14,8 @@ function saveUser() {
     });
 }
 
-const getUserById = async (uid: string): Promise<IUser> => {
-  const response = await axios.get("/getUserById", {});
+const getUserByName = async (name: string): Promise<IUser> => {
+  const response = await axios.get("/getUserById", { params: { name }});
 
   const data = response.data;
 
@@ -42,4 +42,4 @@ const getUserByAccessToken = async (): Promise<IUser> => {
   };
 };
 
-export { saveUser, getUserById, getUserByAccessToken };
+export { saveUser, getUserByName, getUserByAccessToken };

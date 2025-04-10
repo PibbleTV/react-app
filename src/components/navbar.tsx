@@ -25,13 +25,13 @@ const Navbar: React.FC = () => {
       <img src={logo} alt="Logo" className="h-8% w-4%" />
 
       <div className="flex ml-5 w-20% justify-between text-lg">
-        <NavLink to="/" id="home-link">
+        <NavLink to="/" id="home-link" data-testid="btnHome">
           HOME
         </NavLink>
-        <NavLink to="/categories" id="categories-link">
+        <NavLink to="/categories" id="categories-link" data-testid="btnCategories">
           CATEGORIES
         </NavLink>
-        <NavLink to="/leaderboard" id="leaderboard-link">
+        <NavLink to="/leaderboard" id="leaderboard-link" data-testid="btnLeaderboard">
           LEADERBOARD
         </NavLink>
       </div>
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
 
       {!authenticated ? (
         <div className="ml-auto mr-5 text-black">
-          <NavLink to="/login" id="login-link">
+          <NavLink to="/login" id="login-link" data-testid="btnLogIn">
             LOG IN
           </NavLink>
         </div>
