@@ -9,6 +9,6 @@ EXPOSE 10080/udp
 CMD ["/usr/local/srs/objs/srs", "-c", "/usr/local/srs/conf/srs.conf"]
 
 
-# docker build -t nginx -f NGINX.Dockerfile .
+# docker build -t ghcr.io/pibbletv/pibbletv-srs:latest -f SRS.Dockerfile .
 
 
