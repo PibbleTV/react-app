@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { KeycloakContext } from "../KeycloakProvider";
-import SearchBar from "./searchbar.tsx";
+import { KeycloakContext } from "../../KeycloakProvider.tsx";
+import SearchBar from "../navbar/searchbar.tsx";
 
 const logo = "/icon transparent.png";
 const notifs = "/bell-icon.svg";
