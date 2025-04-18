@@ -49,6 +49,7 @@ export default {
         navbar: "#D9D9D9",
         defaultBtn: "#504F4F",
         defaultBtnHover: "#3F3F3F",
+        chatbox: "#504F4F",
       },
       fontFamily: {
         sans: ["system-ui", "Avenir", "Helvetica", "Arial", "sans-serif"],

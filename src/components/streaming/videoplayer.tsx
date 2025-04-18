@@ -43,6 +43,7 @@ const Videoplayer: React.FC = () => {
       <video
         ref={videoRef}
         controls
+        className='h-100% w-100%'
         autoPlay
         muted
       />
