@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const hostname = "http://localhost:8078/api-category";
+const hostname = "http://localhost:8078/category";
 
 interface Category {
   id: number;
