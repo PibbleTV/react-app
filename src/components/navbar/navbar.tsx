@@ -1,20 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { KeycloakContext } from "../KeycloakProvider";
-import SearchBar from "./searchbar.tsx";
+import { KeycloakContext } from "../../KeycloakProvider.tsx";
+import { useAuth } from "../../hooks/useAuth";
+import SearchBar from "../navbar/searchbar.tsx";
 
 const logo = "/icon transparent.png";
 const notifs = "/bell-icon.svg";
 const settings = "cogwheel.png";
 
 const Navbar: React.FC = () => {
-  const keycloakContext = useContext(KeycloakContext);
 
-  if (!keycloakContext) {
-    return <div>Error: Keycloak context could not be found</div>;
-  }
-
-  const { authenticated, keycloak } = keycloakContext;
+const { authenticated, keycloak } = useAuth();
 
   const handleLogout = () => {
     keycloak.logout();

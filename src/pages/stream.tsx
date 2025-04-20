@@ -1,71 +1,55 @@
-import { useEffect, useRef} from 'react';
-import Hls from 'hls.js';
+import ChatBox from '../components/streaming/chatbox';
+import Videoplayer from '../components/streaming/videoplayer';
+import temp from "../../public/temp.png"
+import like from "../../public/like.png"
+import eye from "../../public/eye.png"
 
 const Stream: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const initPlayer = () => {
-      if (videoRef.current) {
-
-        if (Hls.isSupported()) {
-          const hls = new Hls();
-          hls.loadSource('http://localhost:7500/hls/live/gamingstream.m3u8');
-          hls.attachMedia(videoRef.current);
-
-          hls.on(Hls.Events.MANIFEST_PARSED, () => {
-            if (videoRef.current) {
-              videoRef.current.play();
-            }
-          });
-
-          hls.on(Hls.Events.ERROR, (event, data) => {
-            console.error('HLS.js error:', event + " Data:" + data);
-          });
-        } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-          videoRef.current.src = 'http://localhost:7500/hls/live/gamingstream.m3u8';
-          videoRef.current.play();
-        }
-      }
-    };
-
-    initPlayer();
-
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
-    };
-  }, []);
-
   return (
-    <div className="w-full h-50% relative mx-auto">
-      <video
-        ref={videoRef}
-        className="w-50% h-full"
-        controls
-        autoPlay
-        muted
-      />
-
-     <style>
-        {`
-        video::-webkit-media-controls-current-time-display,
-        video::-webkit-media-controls-time-remaining-display,
-        video::-webkit-media-controls-duration-display {
-          display: none !important;
-        }
-        
-        video::-webkit-media-controls-timeline {
-          display: none !important;
-        }
-        
-        video {
-          --media-controls-time-display: none;
-        }
-        `}
-      </style>
+    <>
+    <div className='p-[2.5%] pb-0'>
+    <div className="flex h-[73vh] gap-3%">
+      <div className="flex-1">
+        <Videoplayer />
+      </div>
+      <div className="flex-2 w-[23%] min-h-0">
+        <ChatBox />
+      </div>
     </div>
+
+    <div className='flex flex-row w-[69.8%] mt-[1.5%]'>
+      
+      <div className='h-6% w-6%'>
+        <img className='rounded-full' src={temp}></img>
+      </div>
+
+      <div className='flex flex-col justify-center ml-2%'>
+          <h1 className='text-[1.2rem]'>Streamer</h1>
+          <h1 className='text-[1.5rem]'>A very entertaining live broadcast!</h1>
+      </div>
+
+
+        <div className='flex flex-row h-10% max-w-50% gap-1%'>
+
+          <div className='flex flex-col h-20% w-20% items-center'>
+            <button className="pl-10% pr-10% text-center pt-2% pb-2% text-[1.2rem] font-bold bg-defaultBtn">FOLLOW</button>
+            <div className='flex flex-row gap-15% mt-6% justify-center items-center'>
+              <img className='w-[30%] h-40%' src={eye}></img>
+              <h1 className='font-bold'>1</h1>
+            </div>
+          </div>
+          <div className='flex flex-col h-20% w-20% items-center'>
+            <button className="pl-10% pr-10% text-center pt-2% pb-2% text-[1.2rem] font-bold bg-defaultBtn">DONATE</button>
+            <div className='flex flex-row gap-15% mt-6% justify-center items-center'>
+              <img className='w-[30%] h-40%' src={like}></img>
+              <h1 className='font-bold'>0</h1>
+            </div>
+          </div>
+        </div>
+   
+    </div>
+</div>
+    </>
   );
 };
 
