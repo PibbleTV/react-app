@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { KeycloakContext } from "../../KeycloakProvider.tsx";
 import { useAuth } from "../../hooks/useAuth";
 import SearchBar from "../navbar/searchbar.tsx";
 
-const logo = "/icon transparent.png";
-const notifs = "/bell-icon.svg";
-const settings = "cogwheel.png";
+const logo = "src\images\icon transparent.png";
+const notifs = "../src/images/bell-icon.svg";
+const settings = "../src/images/cogwheel.png";
 
 const Navbar: React.FC = () => {
 
