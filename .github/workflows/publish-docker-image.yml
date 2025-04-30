@@ -20,8 +20,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
 
-      - name: Build application
+      - name: Install and build application
         run: |
+          npm install
           npm run build
 
       - name: Build NGINX and SRS images
