@@ -20,20 +20,24 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
 
+      - name: Build application
+        run: |
+          npm run build
+
       - name: Build NGINX and SRS images
         run: |
-          docker build -f NGINX.Dockerfile -t ghcr.io/tanzerdx/pibbletv-frontend:nginx-latest .
-          docker build -f SRS.Dockerfile -t ghcr.io/tanzerdx/pibbletv-frontend:srs-latest .
+          docker build -f NGINX.Dockerfile -t ghcr.io/pibbletv/pibbletv-srs:latest .
+          docker build -f SRS.Dockerfile -t ghcr.io/pibbletv/pibbletv-nginx:latest .
 
       - name: Push Docker images to GHCR
         run: |
-          docker push ghcr.io/tanzerdx/pibbletv-frontend:nginx-latest
-          docker push ghcr.io/tanzerdx/pibbletv-frontend:srs-latest
+          docker push ghcr.io/pibbletv/pibbletv-srs:latest
+          docker push ghcr.io/pibbletv/pibbletv-nginx:latest
 
       - name: Test pulling images from GHCR
         run: |
-          docker pull ghcr.io/tanzerdx/pibbletv-frontend:nginx-latest
-          docker pull ghcr.io/tanzerdx/pibbletv-frontend:srs-latest
+          docker pull ghcr.io/pibbletv/pibbletv-srs:latest
+          docker pull ghcr.io/pibbletv/pibbletv-nginx:latest
 
       - name: Initialize release pipeline
         run: gh workflow run "deploy-to-test-server.yml" --json
