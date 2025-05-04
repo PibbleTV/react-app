@@ -44,10 +44,10 @@ const Homepage: React.FC = () => {
 
   return (
     <div>
-      <h1 className="text-5xl font-bold pt-3% pl-2%">Leaderboard</h1>
+      <h1 className="text-5xl font-bold pt-[3%] pl-[2%]">Leaderboard</h1>
       <div></div>
 
-      <h1 className="text-5xl font-bold pt-3% pl-2%">Categories</h1>
+      <h1 className="text-5xl font-bold pt-[3%] pl-[2%]">Categories</h1>
 
       <Carousel
         centerMode
@@ -67,7 +67,7 @@ const Homepage: React.FC = () => {
         {categories.slice(0, 5).map((category) => (
           <div
             key={category.id}
-            className="flex flex-col p-20% pt-10% items-center w-full h-30%"
+            className="flex flex-col p-[20%] pt-[10%] items-center w-full h-[30%]"
           >
             <img
               src="/sample.png"

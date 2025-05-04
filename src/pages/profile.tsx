@@ -34,7 +34,7 @@ const Profile = () => {
       </div>
 
       <div className="flex p-10">
-        <div className="w-10%">
+        <div className="w-[10%]">
           <img
             className="w-full rounded-full"
             src={user.profilePic}
@@ -46,7 +46,7 @@ const Profile = () => {
           <div>
             <h1 className="text-3xl font-bold">{user.username}</h1>
           </div>
-          <div className="flex flex-col ml-2%">
+          <div className="flex flex-col ml-[2%]">
             <h1 className="text-3xl">0 followers </h1>
             <h1 className="text-3xl">0 following</h1>
           </div>

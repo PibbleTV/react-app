@@ -6,6 +6,7 @@ import Login from "./pages/login.tsx";
 import Profile from "./pages/profile.tsx";
 import ProtectedRoute from "./ProtectedRoute.tsx";
 import Stream from "./pages/stream.tsx";
+import './index.css';
 
 const App: React.FC = () => {
   return (
