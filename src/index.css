@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-defaultBg text-defaultText;
+  background-color: #272727;
+  color: rgba(255, 255, 255, 0.87);
 }
