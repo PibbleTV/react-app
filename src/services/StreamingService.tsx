@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const hostname = "http://localhost:8078/streaming-service";
+const hostname = "http://api-gateway:8078/streaming";
 
 // interface Stream {
 //   title: string;
