@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import SearchBar from "../navbar/searchbar.tsx";
 
-const logo = "src\images\icon transparent.png";
+const logo = "../src/images/icon transparent.png";
 const notifs = "../src/images/bell-icon.svg";
 const settings = "../src/images/cogwheel.png";
 
