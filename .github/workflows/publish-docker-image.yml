@@ -27,8 +27,8 @@ jobs:
 
       - name: Build NGINX and SRS images
         run: |
-          docker build -f NGINX.Dockerfile -t ghcr.io/pibbletv/pibbletv-srs:latest .
-          docker build -f SRS.Dockerfile -t ghcr.io/pibbletv/pibbletv-nginx:latest .
+          docker build -f SRS.Dockerfile -t ghcr.io/pibbletv/pibbletv-srs:latest .
+          docker build -f NGINX.Dockerfile -t ghcr.io/pibbletv/pibbletv-nginx:latest .
 
       - name: Push Docker images to GHCR
         run: |
