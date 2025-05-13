@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
-const hostname = "http://localhost:8078/streaming";
+const hostname = "http://localhost:8078";
+const streamingEndpoint = `${hostname}/stream`;
 
 // interface Stream {
 //   title: string;
@@ -17,7 +18,7 @@ function createStream(metadata: {
 }): Promise<{ streamKey: string; srtUrl: string }> {
   return axios
     .post<{ streamKey: string; srtUrl: string }>(
-      `${hostname}/stream/createStream`,
+      `${streamingEndpoint}/createStream`,
       metadata
     )
     .then(

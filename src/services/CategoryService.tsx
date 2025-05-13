@@ -1,6 +1,10 @@
 import axios, { AxiosResponse } from "axios";
+import TokenService from "./TokenService";
 
-const hostname = "http://localhost:8078/category";
+const hostname = "http://localhost:8078";
+const categoryEndpoint = `${hostname}/category`;
+
+TokenService.setHeaders(axios);
 
 interface Category {
   id: number;
@@ -10,7 +14,7 @@ interface Category {
 
 function getAllCategories(): Promise<Category[]> {
   return axios
-    .get<Category[]>(`${hostname}/getAll`)
+    .get<Category[]>(`${categoryEndpoint}/getAll`)
     .then((response: AxiosResponse<Category[]>) => response.data);
 }
 

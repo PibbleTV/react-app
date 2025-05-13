@@ -2,7 +2,8 @@ import axios from "axios";
 import TokenService from "./TokenService";
 import { IUser } from "../types/user.type";
 
-const hostname = "http://localhost:8078/user";
+const hostname = "http://localhost:8078";
+const userEndpoint = `${hostname}/user`;
 
 TokenService.setHeaders(axios);
 
@@ -15,7 +16,7 @@ function saveUser() {
 }
 
 const getUserByName = async (name: string): Promise<IUser> => {
-  const response = await axios.get("/getUserById", { params: { name }});
+  const response = await axios.get(`${userEndpoint}/getUserByName`, { params: { name }});
 
   const data = response.data;
 
