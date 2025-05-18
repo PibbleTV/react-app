@@ -1,6 +1,6 @@
 import Keycloak from "keycloak-js";
 
-const hostname = "http://auth.pibbletv.com/"; 
+const hostname = "http://auth.pibbletv.com/auth"; 
 const keycloak = new Keycloak({
   url: `${hostname}`, 
   realm: "pibble-tv",
