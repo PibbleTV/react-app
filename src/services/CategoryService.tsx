@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import TokenService from "./TokenService";
 
-const hostname = "http://localhost:8078";
+const hostname = "http://api-gateway-tcp:8078";
 const categoryEndpoint = `${hostname}/category`;
 
 TokenService.setHeaders(axios);

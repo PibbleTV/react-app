@@ -10,6 +10,8 @@ const Navbar: React.FC = () => {
 
 const { authenticated, keycloak } = useAuth();
 
+console.log(keycloak.token);
+
   const handleLogout = () => {
     keycloak.logout();
   };
