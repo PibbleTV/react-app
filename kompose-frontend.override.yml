@@ -15,14 +15,3 @@ services:
     labels:
       kompose.service.type: "LoadBalancer"
       kompose.image-pull-secret: "ghcr-credentials"
-
-volumes:
-  hls-data:
-    external:
-      name: hls-data
-  nginx-claim0:
-    external:
-      name: nginx-claim0
-  nginx-claim1:
-    external:
-      name: nginx-claim1
