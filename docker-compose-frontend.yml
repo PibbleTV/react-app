@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   srs:
     image: ghcr.io/pibbletv/pibbletv-srs:latest
@@ -10,7 +9,6 @@ services:
     volumes:
       - hls-data:/usr/local/srs/objs/nginx/html/hls/live
 
-
   nginx:
     image: ghcr.io/pibbletv/pibbletv-nginx:latest
     container_name: NGINX
@@ -20,3 +18,10 @@ services:
       - nginx-claim0:/usr/share/nginx/html:ro
       - nginx-claim1:/etc/nginx/nginx.conf:ro
       - hls-data:/usr/local/srs/objs/nginx/html/hls/live:ro
+
+  volumes:
+  hls-data:
+    external:
+      name: hls-data
+  nginx-claim0:
+  nginx-claim1:
