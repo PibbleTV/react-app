@@ -21,10 +21,8 @@ volumes:
     external:
       name: hls-data
   nginx-claim0:
-    labels:
-      kompose.volume.storage-class-name: "local-path"
-      kompose.volume.access-mode: "ReadWriteOnce"
+    external:
+      name: nginx-claim0
   nginx-claim1:
-    labels:
-      kompose.volume.storage-class-name: "local-path"
-      kompose.volume.access-mode: "ReadWriteOnce"
+    external:
+      name: nginx-claim1

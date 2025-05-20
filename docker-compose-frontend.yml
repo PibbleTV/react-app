@@ -18,3 +18,14 @@ services:
       - nginx-claim0:/usr/share/nginx/html:ro
       - nginx-claim1:/etc/nginx/nginx.conf:ro
       - hls-data:/usr/local/srs/objs/nginx/html/hls/live:ro
+
+volumes:
+  hls-data:
+    external:
+      name: hls-data
+  nginx-claim0:
+    external:
+      name: nginx-claim0
+  nginx-claim1:
+    external:
+      name: nginx-claim1
