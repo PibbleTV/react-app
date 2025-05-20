@@ -15,3 +15,13 @@ services:
     labels:
       kompose.service.type: "LoadBalancer"
       kompose.image-pull-secret: "ghcr-credentials"
+
+volumes:
+  nginx-claim0:
+    labels:
+      kompose.volume.storage-class-name: "local-path"
+      kompose.volume.access-mode: "ReadWriteOnce"
+  nginx-claim1:
+    labels:
+      kompose.volume.storage-class-name: "local-path"
+      kompose.volume.access-mode: "ReadWriteOnce"

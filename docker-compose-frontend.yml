@@ -9,9 +9,7 @@ services:
       - "10080"
     volumes:
       - hls-data:/usr/local/srs/objs/nginx/html/hls/live
-    labels:
-      kompose.service.type: "NodePort"
-      kompose.image-pull-secret: "ghcr-credentials"
+
 
   nginx:
     image: ghcr.io/pibbletv/pibbletv-nginx:latest
@@ -22,20 +20,3 @@ services:
       - nginx-claim0:/usr/share/nginx/html:ro
       - nginx-claim1:/etc/nginx/nginx.conf:ro
       - hls-data:/usr/local/srs/objs/nginx/html/hls/live:ro
-    labels:
-      kompose.service.type: "LoadBalancer"
-      kompose.image-pull-secret: "ghcr-credentials"
-
-volumes:
-  hls-data:
-    labels:
-      kompose.volume.storage-class-name: "nfs"
-      kompose.volume.access-mode: "ReadWriteMany"
-  nginx-claim0:
-    labels:
-      kompose.volume.storage-class-name: "local-path"
-      kompose.volume.access-mode: "ReadWriteOnce"
-  nginx-claim1:
-    labels:
-      kompose.volume.storage-class-name: "local-path"
-      kompose.volume.access-mode: "ReadWriteOnce"
