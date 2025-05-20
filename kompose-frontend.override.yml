@@ -17,6 +17,9 @@ services:
       kompose.image-pull-secret: "ghcr-credentials"
 
 volumes:
+  hls-data:
+    external:
+      name: hls-data
   nginx-claim0:
     labels:
       kompose.volume.storage-class-name: "local-path"
