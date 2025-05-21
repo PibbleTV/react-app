@@ -16,7 +16,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: api-gateway
+                name: api-gateway-tcp
                 port:
                   number: 8078
           - path: /
