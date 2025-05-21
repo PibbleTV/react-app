@@ -13,5 +13,5 @@ services:
     ports:
       - "80:80"
     labels:
-      kompose.service.type: "LoadBalancer"
+      kompose.service.type: "NodePort"
       kompose.image-pull-secret: "ghcr-credentials"
