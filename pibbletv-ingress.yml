@@ -23,7 +23,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: nginx-tcp
+                name: nginx
                 port:
                   number: 80
     - host: auth.pibbletv.com
