@@ -9,7 +9,7 @@ services:
       kompose.service.type: "NodePort"
       kompose.image-pull-secret: "ghcr-credentials"
 
-  nginx-tcp:
+  nginx:
     ports:
       - "80:80"
     labels:
