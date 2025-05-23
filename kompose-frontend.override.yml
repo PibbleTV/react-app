@@ -6,12 +6,12 @@ services:
     expose:
       - "10080"
     labels:
-      kompose.service.type: "NodePort"
+      kompose.service.type: "LoadBalancer"
       kompose.image-pull-secret: "ghcr-credentials"
 
   nginx:
     ports:
       - "80:80"
     labels:
-      kompose.service.type: "NodePort"
+      kompose.service.type: "ClusterIP"
       kompose.image-pull-secret: "ghcr-credentials"
