@@ -4,15 +4,10 @@ metadata:
   name: pibbletv-ingress
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
 spec:
   ingressClassName: nginx
-  tls:
-    - hosts:
-        - local.pibbletv.com
-        - auth.pibbletv.com
-      secretName: pibbletv-tls
   rules:
     - host: local.pibbletv.com
       http:

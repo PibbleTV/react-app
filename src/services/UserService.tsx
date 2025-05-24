@@ -2,7 +2,7 @@ import axios from "axios";
 import TokenService from "./TokenService";
 import { IUser } from "../types/user.type";
 
-const hostname = "http://api-gateway:8078";
+const hostname = "http://local.pibbletv.com/api";
 const userEndpoint = `${hostname}/user`;
 
 TokenService.setHeaders(axios);
