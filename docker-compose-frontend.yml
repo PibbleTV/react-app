@@ -23,9 +23,9 @@ volumes:
   hls-data:
     external:
       name: hls-data
-  nginx-claim0:
-    external:
-      name: nginx-claim0
-  nginx-claim1:
-    external:
-      name: nginx-claim1
+  # nginx-claim0:
+  #   external:
+  #     name: nginx-claim0
+  # nginx-claim1:
+  #   external:
+  #     name: nginx-claim1
