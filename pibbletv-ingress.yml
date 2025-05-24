@@ -11,6 +11,7 @@ spec:
   tls:
     - hosts:
         - local.pibbletv.com
+        - auth.pibbletv.com
       secretName: pibbletv-tls
   rules:
     - host: local.pibbletv.com
