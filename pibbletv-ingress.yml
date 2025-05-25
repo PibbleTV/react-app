@@ -5,26 +5,10 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      set $backend_protocol "HTTP";
-      set $proxy_ssl_server_name "";
-      set $proxy_ssl_name "";
-      if ($http_host = "local.pibbletv.com") {
-        if ($request_uri ~ ^/api) {
-          set $backend_protocol "HTTPS";
-          set $proxy_ssl_server_name "on";
-          set $proxy_ssl_name "local.pibbletv.com";
-        }
-      }
-      if ($http_host = "auth.pibbletv.com") {
-        set $backend_protocol "HTTPS";
-        set $proxy_ssl_server_name "on";
-        set $proxy_ssl_name "auth.pibbletv.com";
-      }
-      proxy_set_header X-Backend-Protocol $backend_protocol;
-      proxy_ssl_server_name $proxy_ssl_server_name;
-      proxy_ssl_name $proxy_ssl_name;
+    nginx.ingress.kubernetes.io/use-port-in-redirects: "true"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "30"
+    nginx.ingress.kubernetes.io/service-upstream: "true"
 spec:
   ingressClassName: nginx
   tls:
@@ -43,6 +27,8 @@ spec:
                 name: api-gateway
                 port:
                   number: 8078
+            annotations:
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           - path: /
             pathType: Prefix
             backend:
@@ -50,6 +36,8 @@ spec:
                 name: nginx
                 port:
                   number: 80
+            annotations:
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     - host: auth.pibbletv.com
       http:
         paths:
@@ -60,3 +48,5 @@ spec:
                 name: keycloak
                 port:
                   number: 8443
+            annotations:
+              nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
