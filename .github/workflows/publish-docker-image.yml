@@ -39,8 +39,3 @@ jobs:
         run: |
           docker pull ghcr.io/pibbletv/pibbletv-srs:latest
           docker pull ghcr.io/pibbletv/pibbletv-nginx:latest
-
-      - name: Initialize release pipeline
-        run: gh workflow run "deploy-to-test-server.yml" --repo PibbleTV/api-gateway --json
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
