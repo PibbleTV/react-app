@@ -6,6 +6,25 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      set $backend_protocol "HTTP";
+      set $proxy_ssl_server_name "";
+      set $proxy_ssl_name "";
+      if ($http_host = "local.pibbletv.com") {
+        if ($request_uri ~ ^/api) {
+          set $backend_protocol "HTTPS";
+          set $proxy_ssl_server_name "on";
+          set $proxy_ssl_name "local.pibbletv.com";
+        }
+      }
+      if ($http_host = "auth.pibbletv.com") {
+        set $backend_protocol "HTTPS";
+        set $proxy_ssl_server_name "on";
+        set $proxy_ssl_name "auth.pibbletv.com";
+      }
+      proxy_set_header X-Backend-Protocol $backend_protocol;
+      proxy_ssl_server_name $proxy_ssl_server_name;
+      proxy_ssl_name $proxy_ssl_name;
 spec:
   ingressClassName: nginx
   tls:
@@ -31,7 +50,6 @@ spec:
                 name: nginx
                 port:
                   number: 80
-
     - host: auth.pibbletv.com
       http:
         paths:
