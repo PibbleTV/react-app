@@ -6,9 +6,8 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/use-port-in-redirects: "true"
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "300s"
     nginx.ingress.kubernetes.io/service-upstream: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: nginx
   tls:

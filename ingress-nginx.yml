@@ -5,7 +5,8 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
+    nginx.ingress.kubernetes.io/use-port-in-redirects: "true"
+    nginx.ingress.kubernetes.io/service-upstream: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   ingressClassName: nginx
