@@ -26,11 +26,11 @@ spec:
             - name: PROVISIONER_NAME
               value: cluster.local/nfs-subdir-external-provisioner
             - name: NFS_SERVER
-              value: 10.1.126.0
+              value: 10.110.0.3
             - name: NFS_PATH
               value: /srv/nfs/hls-data
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.1.126.0
+            server: 10.110.0.3
             path: /srv/nfs/hls-data
