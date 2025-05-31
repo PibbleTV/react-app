@@ -1,0 +1,10 @@
+#nfs-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nfs-service
+spec:
+  ports:
+    - port: 2049
+  selector:
+    app: nfs-server

@@ -1,12 +1,13 @@
+#nfs-pvc.yml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: hls-data
+  name: server-storage
   namespace: default
 spec:
-  storageClassName: nfs
+  storageClassName: do-block-storage
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
