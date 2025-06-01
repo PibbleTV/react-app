@@ -13,6 +13,6 @@ services:
     ports:
       - "80:80"
     labels:
-      kompose.service.type: "ClusterIP"
+      kompose.service.type: "LoadBalancer"
       kompose.image-pull-secret: "ghcr-credentials"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
