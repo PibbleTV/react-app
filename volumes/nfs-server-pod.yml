@@ -6,6 +6,8 @@ metadata:
   labels:
     app: nfs-server
 spec:
+  hostNetwork: true
+  nodeName: pool-pibbletv-teof0
   containers:
     - name: nfs-server
       image: itsthenetwork/nfs-server-alpine
