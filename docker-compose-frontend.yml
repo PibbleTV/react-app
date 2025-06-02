@@ -4,6 +4,7 @@ services:
     container_name: SRS
     ports:
       - "10080:10080/udp"
+      - "10080:10080/tcp"
     expose:
       - "10080"
     volumes:
