@@ -7,9 +7,6 @@ services:
     labels:
       kompose.service.type: "LoadBalancer"
       kompose.image-pull-secret: "ghcr-credentials"
-    annotations:
-      service.beta.kubernetes.io/do-loadbalancer-protocol: "tcp,udp"
-      service.beta.kubernetes.io/do-loadbalancer-name: "srs-lb"
 
   nginx:
     ports:
