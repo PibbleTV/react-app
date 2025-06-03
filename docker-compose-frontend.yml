@@ -1,15 +1,15 @@
 services:
-srs:
-  image: ghcr.io/pibbletv/pibbletv-srs:latest
-  container_name: SRS
-  ports:
-    - "10080:10080/udp"
-    - "10080:10080/tcp"
-  volumes:
-    - hls-data:/usr/local/srs/objs/nginx/html/hls/live
-  annotations:
-    service.beta.kubernetes.io/do-loadbalancer-protocol: "tcp,udp"
-    service.beta.kubernetes.io/do-loadbalancer-name: "srs-lb"
+  srs:
+    image: ghcr.io/pibbletv/pibbletv-srs:latest
+    container_name: SRS
+    ports:
+      - "10080:10080/udp"
+      - "10080:10080/tcp"
+    volumes:
+      - hls-data:/usr/local/srs/objs/nginx/html/hls/live
+    annotations:
+      service.beta.kubernetes.io/do-loadbalancer-protocol: "tcp,udp"
+      service.beta.kubernetes.io/do-loadbalancer-name: "srs-lb"
 
   nginx:
     image: ghcr.io/pibbletv/pibbletv-nginx:latest
