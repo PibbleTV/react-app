@@ -6,7 +6,7 @@ metadata:
   name: hls-data
 spec:
   accessModes:
-    - ReadOnlyMany
+    - ReadWriteMany
   resources:
     requests:
       storage: 100Mi

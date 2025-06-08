@@ -14,9 +14,12 @@ export const options = {
 };
 
 export default function () {
-  const result = http.get('https://local.pibbletv.com/api/category/getAll');
-  check(result, {
-    'status is 200': (r) => r.status === 200,
-  });
-  sleep(1); 
-}
+    const url = 'https://local.pibbletv.com/api/category/getByKeyword?keyword=Grand';
+    const res = http.get(url);
+  
+    check(res, {
+      'status is 200': (r) => r.status === 200,
+    });
+  
+    sleep(1);
+  }
