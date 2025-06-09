@@ -1,6 +1,16 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
+const keywordList = [
+    'Minecraft',
+    'Exploring',
+    'Building',
+    'Decorating',
+    'Bob',
+    'Patricia',
+  ];
+  
+
 export const options = {
   stages: [
     { duration: '15s', target: 5 },
@@ -15,7 +25,8 @@ export const options = {
 };
 
 export default function () {
-  const result = http.get('https://local.pibbletv.com/api/category/getAll');
+  const keyword = keywordList[Math.floor(Math.random() * keywordList.length)];
+  const result = http.get(`https://local.pibbletv.com/api/stream/getPerKeyword?keyword=${keyword}`);
   check(result, {
     'status is 200': (r) => r.status === 200,
   });

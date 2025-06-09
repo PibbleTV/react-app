@@ -3,9 +3,10 @@ import { check, sleep } from 'k6';
 
 export const options = {
   stages: [
-    { duration: '30s', target: 10 }, 
-    { duration: '1m', target: 10 }, 
-    { duration: '30s', target: 0 },  
+    { duration: '15s', target: 10 },
+    { duration: '30s', target: 20 },
+    { duration: '1m', target: 40 },
+    { duration: '15s', target: 0 },
   ],
   thresholds: {
     http_req_duration: ['p(95)<500'], 
@@ -14,10 +15,9 @@ export const options = {
 };
 
 export default function () {
-    const url = 'https://local.pibbletv.com/api/category/getByKeyword?keyword=Grand';
-    const res = http.get(url);
+    const result = http.get(`https://local.pibbletv.com/api/category/getByKeyword?keyword=Grand`);
   
-    check(res, {
+    check(result, {
       'status is 200': (r) => r.status === 200,
     });
   

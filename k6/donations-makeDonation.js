@@ -29,7 +29,7 @@ export const options = {
 export default function () {
   const [donorId, receiverId] = getTwoDifferentRandomIds();
 
-  const url = 'https://local.pibbletv.com/api/donations/makeDonation';
+  const url = `https://local.pibbletv.com/api/donations/makeDonation`;
 
   const payload = JSON.stringify({
     donorId,
@@ -50,4 +50,5 @@ export default function () {
   check(res, {
     'status is 200 or 204': (r) => r.status === 200 || r.status === 204,
   });
+  sleep(1);
 }
