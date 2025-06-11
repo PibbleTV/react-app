@@ -18,13 +18,6 @@ spec:
     - host: app.167.99.36.185.nip.io
       http:
         paths:
-          - path: /.well-known/acme-challenge
-            pathType: Prefix
-            backend:
-              service:
-                name: none
-                port:
-                  number: 80
           - path: /
             pathType: Prefix
             backend:
