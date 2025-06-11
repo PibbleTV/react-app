@@ -4,16 +4,17 @@ metadata:
   name: pibbletv-ingress-nginx
   namespace: default
   annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/service-upstream: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/use-port-in-redirects: "true"
-    nginx.ingress.kubernetes.io/service-upstream: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
         - local.pibbletv.com
-      secretName: pibbletv-tls
+      secretName: pibbletv-tls-nginx
   rules:
     - host: local.pibbletv.com
       http:
