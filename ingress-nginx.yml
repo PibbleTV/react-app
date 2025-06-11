@@ -6,16 +6,16 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
     nginx.ingress.kubernetes.io/service-upstream: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/use-port-in-redirects: "true"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - local.167.99.36.185.nip.io
+        - app.167.99.36.185.nip.io
       secretName: pibbletv-tls-nginx
   rules:
-    - host: local.167.99.36.185.nip.io
+    - host: app.167.99.36.185.nip.io
       http:
         paths:
           - path: /
