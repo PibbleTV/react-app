@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import TokenService from "./TokenService";
 
-const hostname = "https://local.pibbletv.com/api";
+const hostname = "https://api.167.99.36.185.nip.io";
 const categoryEndpoint = `${hostname}/category`;
 
 TokenService.setHeaders(axios);
