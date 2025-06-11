@@ -9,15 +9,14 @@ metadata:
     nginx.ingress.kubernetes.io/service-upstream: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/use-port-in-redirects: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - local.pibbletv.com
+        - local.167.99.36.185.nip.io
       secretName: pibbletv-tls-api
   rules:
-    - host: local.pibbletv.com
+    - host: local.167.99.36.185.nip.io
       http:
         paths:
           - path: /api
