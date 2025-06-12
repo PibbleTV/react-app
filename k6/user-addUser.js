@@ -20,7 +20,7 @@ export default function () {
   const userTag = __VU * 10000 + __ITER; 
   const userName = `test${userTag}`;
 
-  const url = `https://local.pibbletv.com/api/user/addUser`;
+  const url = `https://api.24.144.77.108.nip.io/user/addUser`;
 
   const payload = JSON.stringify({
     userName

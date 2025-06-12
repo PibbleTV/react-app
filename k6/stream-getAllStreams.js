@@ -15,7 +15,7 @@ export const options = {
 };
 
 export default function () {
-  const result = http.get(`https://local.pibbletv.com/api/stream/getAll`);
+  const result = http.get(`https://api.24.144.77.108.nip.io/stream/getAll`);
   check(result, {
     'status is 200': (r) => r.status === 200,
   });

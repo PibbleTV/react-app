@@ -24,7 +24,7 @@ export const options = {
 export default function () {
 
   const username = userNames[Math.floor(Math.random() * userNames.length)];
-  const result = http.get(`https://local.pibbletv.com/api/user/getUser?username=${username}`);
+  const result = http.get(`https://api.24.144.77.108.nip.io/user/getUser?username=${username}`);
 
   check(result, {
     'status is 200': (r) => r.status === 200,

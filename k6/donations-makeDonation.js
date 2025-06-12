@@ -29,7 +29,7 @@ export const options = {
 export default function () {
   const [donorId, receiverId] = getTwoDifferentRandomIds();
 
-  const url = `https://local.pibbletv.com/api/donations/makeDonation`;
+  const url = `https://api.24.144.77.108.nip.io/donations/makeDonation`;
 
   const payload = JSON.stringify({
     donorId,

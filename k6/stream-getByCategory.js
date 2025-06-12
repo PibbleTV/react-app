@@ -25,7 +25,7 @@ export const options = {
 
 export default function () {
   const idToUse = categoryIds[Math.floor(Math.random() * categoryIds.length)];
-  const result = http.get(`https://local.pibbletv.com/api/stream/getPerCategory?categoryId=${idToUse}`);
+  const result = http.get(`https://api.24.144.77.108.nip.io/stream/getPerCategory?categoryId=${idToUse}`);
   check(result, {
     'status is 200': (r) => r.status === 200,
   });

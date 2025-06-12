@@ -25,7 +25,7 @@ export const options = {
 
 export default function () {
   const idToUse = userIds[Math.floor(Math.random() * userIds.length)];
-  const result = http.get(`https://local.pibbletv.com/api/following/getFollowers?userId=${idToUse}`);
+  const result = http.get(`https://api.24.144.77.108.nip.io/following/getFollowers?userId=${idToUse}`);
   check(result, {
     'status is 200': (r) => r.status === 200,
   });
