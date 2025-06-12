@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - api.206.189.243.1.nip.io
+        - api.24.144.77.108.nip.io
       secretName: pibbletv-tls-api
   rules:
-    - host: api.206.189.243.1.nip.io
+    - host: api.24.144.77.108.nip.io
       http:
         paths:
           - path: /
