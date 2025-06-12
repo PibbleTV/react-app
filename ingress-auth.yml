@@ -11,7 +11,7 @@ spec:
   tls:
     - hosts:
         - auth.24.144.77.108.nip.io
-      secretName: pibbletv-tls-auth-f468g
+      secretName: pibbletv-tls-auth
   rules:
     - host: auth.24.144.77.108.nip.io
       http:
