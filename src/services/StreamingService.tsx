@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const hostname = "https://api.24.144.77.108.nip.io";
+const hostname = "https://gateway.24.144.77.108.nip.io";
 const streamingEndpoint = `${hostname}/stream`;
 
 // interface Stream {

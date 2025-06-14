@@ -12,7 +12,8 @@ const userNames = [
 export const options = {
   stages: [
     { duration: '30s', target: 30 }, 
-    { duration: '1m', target: 50 }, 
+    { duration: '45s', target: 50 }, 
+    { duration: '1m', target: 75 }, 
     { duration: '30s', target: 0 },  
   ],
   thresholds: {
@@ -24,7 +25,7 @@ export const options = {
 export default function () {
 
   const username = userNames[Math.floor(Math.random() * userNames.length)];
-  const result = http.get(`https://api.24.144.77.108.nip.io/user/getUser?username=${username}`);
+  const result = http.get(`https://gateway.24.144.77.108.nip.io/user/getUser?username=${username}`);
 
   check(result, {
     'status is 200': (r) => r.status === 200,

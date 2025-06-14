@@ -15,7 +15,7 @@ export const options = {
 };
 
 export default function () {
-    const result = http.get(`https://api.24.144.77.108.nip.io/category/getByKeyword?keyword=Grand`);
+    const result = http.get(`https://gateway.24.144.77.108.nip.io/category/getByKeyword?keyword=Grand`);
   
     check(result, {
       'status is 200': (r) => r.status === 200,

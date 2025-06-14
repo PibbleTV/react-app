@@ -12,9 +12,9 @@ const userIds = [
 
 export const options = {
   stages: [
-    { duration: '15s', target: 5 },
-    { duration: '30s', target: 15 },
-    { duration: '1m', target: 30 },
+    { duration: '15s', target: 20 },
+    { duration: '30s', target: 50 },
+    { duration: '1m', target: 75 },
     { duration: '15s', target: 0 },
   ],
   thresholds: {
@@ -25,7 +25,7 @@ export const options = {
 
 export default function () {
   const idToUse = userIds[Math.floor(Math.random() * userIds.length)];
-  const result = http.get(`https://api.24.144.77.108.nip.io/following/getFollowers?userId=${idToUse}`);
+  const result = http.get(`https://gateway.24.144.77.108.nip.io/following/getFollowers?userId=${idToUse}`);
   check(result, {
     'status is 200': (r) => r.status === 200,
   });

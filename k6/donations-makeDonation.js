@@ -16,9 +16,9 @@ function getTwoDifferentRandomIds() {
 
 export const options = {
   stages: [
-    { duration: '30s', target: 50 },
-    { duration: '1m', target: 100 },
-    { duration: '30s', target: 0 },
+    { duration: '15s', target: 20 },
+    { duration: '1m', target: 50 },
+    { duration: '15s', target: 0 },
   ],
   thresholds: {
     http_req_duration: ['p(95)<500'],
@@ -29,7 +29,7 @@ export const options = {
 export default function () {
   const [donorId, receiverId] = getTwoDifferentRandomIds();
 
-  const url = `https://api.24.144.77.108.nip.io/donations/makeDonation`;
+  const url = `https://gateway.24.144.77.108.nip.io/donations/makeDonation`;
 
   const payload = JSON.stringify({
     donorId,

@@ -4,9 +4,9 @@ import { check } from 'k6';
 
 export const options = {
   stages: [
-    { duration: '15s', target: 20 },
-    { duration: '30s', target: 50 },
-    { duration: '1m', target: 75 },
+    { duration: '15s', target: 5 },
+    { duration: '30s', target: 15 },
+    { duration: '1m', target: 25 },
     { duration: '30s', target: 0 },
   ],
   thresholds: {
@@ -17,22 +17,9 @@ export const options = {
 
 export default function () {
 
-  const userTag = __VU * 10000 + __ITER; 
-  const userName = `test${userTag}`;
+  const userName = `${timestamp}${__ITER}`;
 
-  const url = `https://api.24.144.77.108.nip.io/user/addUser`;
-
-  const payload = JSON.stringify({
-    userName
-  });
-
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
-
-  const res = http.post(url, payload, params);
+  const res = http.post(`https://gateway.24.144.77.108.nip.io/user/addUser?username=${userName}`);
 
   check(res, {
     'status is 200 or 204': (r) => r.status === 200 || r.status === 204,
