@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const hostname = "http://local.pibbletv.com/api";
+const hostname = "https://api.24.144.77.108.nip.io";
 const streamingEndpoint = `${hostname}/stream`;
 
 // interface Stream {

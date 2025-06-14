@@ -2,7 +2,7 @@ import axios from "axios";
 import TokenService from "./TokenService";
 import { IUser } from "../types/user.type";
 
-const hostname = "http://local.pibbletv.com/api";
+const hostname = "https://api.24.144.77.108.nip.io";
 const userEndpoint = `${hostname}/user`;
 
 TokenService.setHeaders(axios);
