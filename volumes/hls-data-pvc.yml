@@ -1,0 +1,14 @@
+#hls-data-pvc.yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hls-data
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: nfs-pv
+  storageClassName: ""
