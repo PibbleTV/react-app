@@ -1,0 +1,25 @@
+#nfs-server-pod.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nfs-server
+  labels:
+    app: nfs-server
+spec:
+  hostNetwork: true
+  nodeName: pibbletv-t6ats
+  containers:
+    - name: nfs-server
+      image: itsthenetwork/nfs-server-alpine
+      env:
+        - name: SHARED_DIRECTORY
+          value: "/exports"
+      volumeMounts:
+        - name: storage
+          mountPath: /exports
+      securityContext:
+        privileged: true
+  volumes:
+    - name: storage
+      persistentVolumeClaim:
+        claimName: server-storage

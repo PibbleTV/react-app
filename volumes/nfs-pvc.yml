@@ -1,0 +1,13 @@
+#nfs-pvc.yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: server-storage
+  namespace: default
+spec:
+  storageClassName: do-block-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
