@@ -39,13 +39,12 @@ const Videoplayer: React.FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto">
+    <div className="w-full aspect-video">
       <video
         ref={videoRef}
         controls
-        className='h-full w-100%'
+        className='w-full h-[675px] object-cover'
         autoPlay
-        muted
       />
 
      <style>
