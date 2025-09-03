@@ -9,7 +9,7 @@ const Stream: React.FC = () => {
     <>
     <div className='p-[2.5%] pb-0'>
     <div className="flex h-[73vh] gap-[3%]">
-      <div className="flex-1 h-[50%]">
+      <div className="flex-1">
         <Videoplayer />
       </div>
       <div className="flex-2 w-[23%] min-h-0">

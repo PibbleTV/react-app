@@ -1,5 +1,5 @@
 
-const search = "../../public/search.png";
+const search = "/search.png";
 
 const SearchBar: React.FC = () => {
   return (

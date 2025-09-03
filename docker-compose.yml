@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   srs:
-    image: ghcr.io/pibbletv/pibbletv-srs:latest
+    image: ghcr.io/pibbletv/srs:latest
     container_name: pibbletv-srs
     ports:
       - "10080:10080/udp"
@@ -9,7 +9,7 @@ services:
       - hls_data:/usr/local/srs/objs/nginx/html/hls
 
   nginx:
-    image: ghcr.io/pibbletv/pibbletv-nginx:latest
+    image: ghcr.io/pibbletv/nginx:latest
     container_name: pibbletv-nginx
     ports:
       - "8080:80"

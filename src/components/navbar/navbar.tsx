@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import SearchBar from "../navbar/searchbar.tsx";
 
-const logo = "../src/images/icon transparent.png";
+const logo = "/icon transparent.png";
 
 const Navbar: React.FC = () => {
 
