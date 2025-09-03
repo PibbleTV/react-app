@@ -9,7 +9,7 @@ const Stream: React.FC = () => {
     <>
     <div className='p-[2.5%] pb-0'>
     <div className="flex h-[73vh] gap-[3%]">
-      <div className="flex-1">
+      <div className="flex-1 h-[50%]">
         <Videoplayer />
       </div>
       <div className="flex-2 w-[23%] min-h-0">
@@ -35,14 +35,14 @@ const Stream: React.FC = () => {
             <button className="pl-10% pr-10% text-center pt-2% pb-2% text-[1.2rem] font-bold bg-defaultBtn">FOLLOW</button>
             <div className='flex flex-row gap-15% mt-6% justify-center items-center'>
               <img className='w-[30%] h-40%' src={eye}></img>
-              <h1 className='font-bold'>1</h1>
+              <h1 className='font-bold'>512</h1>
             </div>
           </div>
           <div className='flex flex-col h-20% w-20% items-center'>
             <button className="pl-10% pr-10% text-center pt-2% pb-2% text-[1.2rem] font-bold bg-defaultBtn">DONATE</button>
             <div className='flex flex-row gap-15% mt-6% justify-center items-center'>
               <img className='w-[30%] h-40%' src={like}></img>
-              <h1 className='font-bold'>0</h1>
+              <h1 className='font-bold'>104</h1>
             </div>
           </div>
         </div>
