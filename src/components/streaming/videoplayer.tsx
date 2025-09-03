@@ -10,7 +10,7 @@ const Videoplayer: React.FC = () => {
 
         if (Hls.isSupported()) {
           const hls = new Hls();
-          hls.loadSource('http://localhost:80/hls/live/testing.m3u8');
+          hls.loadSource('http://localhost:8080/hls/live/testing.m3u8');
           hls.attachMedia(videoRef.current);
 
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
@@ -23,7 +23,7 @@ const Videoplayer: React.FC = () => {
             console.error('HLS.js error:', event + " Data:" + data);
           });
         } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-          videoRef.current.src = 'http://localhost:80/hls/live/testing.m3u8';
+          videoRef.current.src = 'http://localhost:8080/hls/live/testing.m3u8';
           videoRef.current.play();
         }
       }
@@ -43,7 +43,7 @@ const Videoplayer: React.FC = () => {
       <video
         ref={videoRef}
         controls
-        className='h-100% w-100%'
+        className='h-full w-100%'
         autoPlay
         muted
       />

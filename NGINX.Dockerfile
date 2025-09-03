@@ -24,3 +24,4 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
 
 # docker build -t ghcr.io/pibbletv/pibbletv-nginx:latest -f NGINX.Dockerfile .
+# docker run -d -p 8080:80 --name nginx ghcr.io/pibbletv/pibbletv-nginx:latest    
