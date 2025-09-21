@@ -1,4 +1,3 @@
-
 const search = "/search.png";
 
 const SearchBar: React.FC = () => {

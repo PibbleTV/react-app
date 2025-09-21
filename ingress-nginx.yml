@@ -11,17 +11,17 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
-    - app.24.144.77.108.nip.io
-    secretName: pibbletv-tls-nginx
+    - hosts:
+        - app.24.144.77.108.nip.io
+      secretName: pibbletv-tls-nginx
   rules:
-  - host: app.24.144.77.108.nip.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx
-            port:
-              number: 80
+    - host: app.24.144.77.108.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx
+                port:
+                  number: 80
