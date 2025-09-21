@@ -1,5 +1,5 @@
-import { useEffect, useRef} from 'react';
-import Hls from 'hls.js';
+import { useEffect, useRef } from "react";
+import Hls from "hls.js";
 
 const Videoplayer: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -7,10 +7,9 @@ const Videoplayer: React.FC = () => {
   useEffect(() => {
     const initPlayer = () => {
       if (videoRef.current) {
-
         if (Hls.isSupported()) {
           const hls = new Hls();
-          hls.loadSource('http://localhost:8080/hls/live/testing.m3u8');
+          hls.loadSource("http://localhost:8080/hls/live/testing.m3u8");
           hls.attachMedia(videoRef.current);
 
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
@@ -20,10 +19,12 @@ const Videoplayer: React.FC = () => {
           });
 
           hls.on(Hls.Events.ERROR, (event, data) => {
-            console.error('HLS.js error:', event + " Data:" + data);
+            console.error("HLS.js error:", event + " Data:" + data);
           });
-        } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
-          videoRef.current.src = 'http://localhost:8080/hls/live/testing.m3u8';
+        } else if (
+          videoRef.current.canPlayType("application/vnd.apple.mpegurl")
+        ) {
+          videoRef.current.src = "http://localhost:8080/hls/live/testing.m3u8";
           videoRef.current.play();
         }
       }
@@ -43,11 +44,11 @@ const Videoplayer: React.FC = () => {
       <video
         ref={videoRef}
         controls
-        className='w-full h-[675px] object-cover'
+        className="w-full h-[675px] object-cover"
         autoPlay
       />
 
-     <style>
+      <style>
         {`
         video::-webkit-media-controls-current-time-display,
         video::-webkit-media-controls-time-remaining-display,

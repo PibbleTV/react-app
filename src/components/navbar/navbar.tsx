@@ -4,7 +4,6 @@ import SearchBar from "../navbar/searchbar.tsx";
 const logo = "/icon transparent.png";
 
 const Navbar: React.FC = () => {
-
   return (
     <div className="bg-navbar flex items-center p-0 text-black">
       <img src={logo} alt="Logo" className="h-8% w-4%" />
@@ -13,24 +12,29 @@ const Navbar: React.FC = () => {
         <NavLink to="/" id="home-link" data-testid="btnHome">
           HOME
         </NavLink>
-        <NavLink to="/categories" id="categories-link" data-testid="btnCategories">
+        <NavLink
+          to="/categories"
+          id="categories-link"
+          data-testid="btnCategories"
+        >
           CATEGORIES
         </NavLink>
-        <NavLink to="/leaderboard" id="leaderboard-link" data-testid="btnLeaderboard">
+        <NavLink
+          to="/leaderboard"
+          id="leaderboard-link"
+          data-testid="btnLeaderboard"
+        >
           LEADERBOARD
         </NavLink>
       </div>
 
       <SearchBar />
 
-     
-        <div className="ml-auto mr-5 text-black">
-          <NavLink to="/login" id="login-link" data-testid="btnLogIn">
-            LOG IN
-          </NavLink>
-        </div>
-
-      
+      <div className="ml-auto mr-5 text-black">
+        <NavLink to="/login" id="login-link" data-testid="btnLogIn">
+          LOG IN
+        </NavLink>
+      </div>
     </div>
   );
 };
